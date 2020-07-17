@@ -16,4 +16,4 @@ Vorp Core paycheck Script by Nukkle
 
 
 
---> You can change the timer into first client.lua files
+--> You can change the timer into first client.lua lines
