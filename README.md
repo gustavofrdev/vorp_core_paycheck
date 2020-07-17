@@ -17,3 +17,7 @@ Vorp Core paycheck Script by Nukkle
 
 
 --> You can change the timer into first client.lua lines
+
+
+
+Salary notification IMG: https://cdn.discordapp.com/attachments/697509082306969692/733754549839462541/unknown.png
