@@ -2,8 +2,15 @@
 ------------------------------------
 --------- CONFIG -------------------
 ------------------------------------
-local canServerConsoleDebugs = true 
+local canServerConsoleDebugs = false 
 -- Let this false to remove console prints!
+local salaryMessages= {
+	["Money_Salary_Recive"] = "You Recived a Money Salary: $",
+	["Gold_Salary_Recive"]  = "You Recived a Gold Salary:   ",
+	["Xp_Salary_Recive"]    = "+"
+}
+-- Tip Notifications
+
 ------------------------------------
 
 RegisterServerEvent("salaryJobs:GIVE")
@@ -51,14 +58,17 @@ if user.job == _v[1] then
 							print("--------------------------------------------------------------")		
 							end
 							--> Setagem do money,gold,xp
-							if money[source]>1 then 
+							if money[source]>=1 then 
 								TriggerEvent("vorp:addMoney", source, 0, money[source]);
+								g:Notify(salaryMessages["Money_Salary_Recive"]..money[source])
 							end 
-							if gold[source]>1 then 
+							if gold[source]>=1 then 
 								TriggerEvent("vorp:addMoney", source, 1, gold[source]);
+								g:Notify(salaryMessages["Gold_Salary_Recive"]..gold[source])
 							end
-							if xp[source]>1 then 
+							if xp[source]>=1 then 
 								TriggerEvent("vorp:addXp", source, xp[source])
+								g:Notify(salaryMessages["Xp_Salary_Recive"]..xp[source])
 							end 
 							--> Reset for not double abusing
 							money   [source] = 0
@@ -74,6 +84,10 @@ else
 end
 end
 
+function g:Notify(msg)
+local source=source
+TriggerClientEvent("vorp:Tip", source, msg, 500) 
+end
 ------------------------------------------------------------------------------------------
 
 -- Evento para usar a função acima no client.lua
