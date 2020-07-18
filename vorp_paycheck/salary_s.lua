@@ -21,7 +21,7 @@ local noSalaryMessages={
 	["Xp_Salary_Recive_No_Recive"   ]  = "XP: You job doesn't give xp salary"
 }
 -- Tip Notifications
-local messageSecondsInScreen = 10
+local messageSecondsInScreen = 20 --20 by default 
 -- When the user recive a salary, a tip notif appear in screen. What secoends this notification needs to be on screen?
 
 ---------------- Salary Configuration: 
